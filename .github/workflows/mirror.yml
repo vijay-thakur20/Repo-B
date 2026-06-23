@@ -18,6 +18,7 @@ jobs:
 
       - name: Push to repo B
         env:
-          TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
-          git push --mirror https://x-access-token:${TOKEN}@github.com/vijay-thakur20/Repo-A.git
+          git remote add mirror https://x-access-token:${TOKEN}@github.com/vijay-thakur20/Repo-A.git
+          git push mirror main
